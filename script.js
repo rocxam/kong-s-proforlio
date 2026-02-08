@@ -1,27 +1,38 @@
-console.log("✅ JavaScript file is loading!");
+console.log("🎯 JavaScript is starting...");
 
-// Make section titles clickable
+// Wait for page to load
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("✅ DOM is loaded!");
+    console.log("✅ Page is ready!");
     
-    // Add click effects to section titles
+    // TEST 1: Make section titles red (visible test)
     const titles = document.querySelectorAll('.section-title');
-    console.log("Found", titles.length, "section titles");
+    console.log("Found " + titles.length + " section titles");
     
-    titles.forEach(title => {
-        title.style.cursor = 'pointer';
-        title.addEventListener('click', function() {
-            alert('You clicked: ' + this.textContent);
+    if (titles.length > 0) {
+        titles[0].style.color = 'red';
+        titles[0].style.fontWeight = 'bold';
+        console.log("✅ Changed first title to RED");
+    }
+    
+    // TEST 2: Add click to first box
+    const firstBox = document.querySelector('.box1');
+    if (firstBox) {
+        firstBox.style.cursor = 'pointer';
+        firstBox.addEventListener('click', function() {
+            alert('📦 Box 1 clicked!');
+        });
+        console.log("✅ Made Box 1 clickable");
+    }
+    
+    // TEST 3: Simple hover on titles
+    titles.forEach(function(title) {
+        title.addEventListener('mouseover', function() {
+            this.style.backgroundColor = 'rgba(255, 0, 0, 0.1)';
+        });
+        title.addEventListener('mouseout', function() {
+            this.style.backgroundColor = '';
         });
     });
     
-    // Simple hover effect
-    titles.forEach(title => {
-        title.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.05)';
-        });
-        title.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1)';
-        });
-    });
+    console.log("✅ All JavaScript loaded successfully!");
 });
