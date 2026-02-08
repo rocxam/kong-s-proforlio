@@ -16,8 +16,7 @@ body {
     z-index: -1;
     overflow: hidden;
     /* Add the autumn background image */
-    background: #1E1E20 url('http://premiumcoding.com/CSSTricks/fallingLeaves/autumn.jpg') center/cover no-repeat;
-}
+    
 
 .loader {
     width: 100%;
