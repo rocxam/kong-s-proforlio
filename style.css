@@ -73,3 +73,135 @@ body {
     justify-content: center;
     align-items: center;
 }
+/* Water Bubbles */
+.bubbles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: rise 15s infinite ease-in;
+}
+
+.bubble:before {
+    content: '';
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    top: 20%;
+    left: 20%;
+}
+
+/* Different bubble sizes */
+.bubble:nth-child(1) {
+    width: 40px;
+    height: 40px;
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 12s;
+}
+
+.bubble:nth-child(2) {
+    width: 20px;
+    height: 20px;
+    left: 20%;
+    animation-delay: 1s;
+    animation-duration: 10s;
+}
+
+.bubble:nth-child(3) {
+    width: 50px;
+    height: 50px;
+    left: 35%;
+    animation-delay: 3s;
+    animation-duration: 15s;
+}
+
+.bubble:nth-child(4) {
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    animation-delay: 5s;
+    animation-duration: 18s;
+}
+
+.bubble:nth-child(5) {
+    width: 30px;
+    height: 30px;
+    left: 65%;
+    animation-delay: 2s;
+    animation-duration: 11s;
+}
+
+.bubble:nth-child(6) {
+    width: 60px;
+    height: 60px;
+    left: 80%;
+    animation-delay: 4s;
+    animation-duration: 14s;
+}
+
+.bubble:nth-child(7) {
+    width: 25px;
+    height: 25px;
+    left: 90%;
+    animation-delay: 6s;
+    animation-duration: 9s;
+}
+
+.bubble:nth-child(8) {
+    width: 45px;
+    height: 45px;
+    left: 70%;
+    animation-delay: 7s;
+    animation-duration: 13s;
+}
+
+.bubble:nth-child(9) {
+    width: 35px;
+    height: 35px;
+    left: 30%;
+    animation-delay: 8s;
+    animation-duration: 16s;
+}
+
+.bubble:nth-child(10) {
+    width: 70px;
+    height: 70px;
+    left: 5%;
+    animation-delay: 9s;
+    animation-duration: 20s;
+}
+
+/* Rising animation */
+@keyframes rise {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.2;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.2);
+        opacity: 0;
+    }
+}
