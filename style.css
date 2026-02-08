@@ -197,27 +197,3 @@ body {
     animation-delay: 9s;
     animation-duration: 20s;
 }
-
-/* Content1 styling - Rocxam text (Brown) */
-.content1 h1 {
-    color: #8B4513;
-}
-
-/* BOX 1: HOME PAGE - All text Brown */
-.box1 .inner-rectangle {
-    color: #8B4513;
-}
-
-/* BOX 3: PROJECTS SECTION - All text Green */
-.box3 .placeholder {
-    color: #2E8B57;
-}
-
-/* BOX 4: CONTACT SECTION - Specific colors */
-.box4 .contact-item:nth-child(1) { /* Email - Brown */
-    color: #8B4513;
-}
-
-.box4 .contact-item:nth-child(3) { /* GitHub - Green */
-    color: #2E8B57;
-}
