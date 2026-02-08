@@ -94,14 +94,18 @@ body {
 }
 
 .bubble:before {
-    content: '';
-    position: absolute;
-    width: 30%;
-    height: 30%;
-    background: rgba(40, 40, 234, 0.2);
-    border-radius: 50%;
-    top: 20%;
-    left: 20%;
+   .bubble {
+    background: rgba(0, 100, 255, 0.15); /* Solid blue base */
+    border: 1px solid rgba(0, 150, 255, 0.3);
+    box-shadow: 
+        0 0 10px rgba(0, 120, 255, 0.3),
+        inset 0 0 15px rgba(0, 180, 255, 0.2);
+}
+
+.bubble:before {
+    background: rgba(0, 200, 255, 0.3); /* Brighter blue highlight */
+    box-shadow: 0 0 8px rgba(0, 180, 255, 0.4);
+}
 }
 
 /* Different bubble sizes */
