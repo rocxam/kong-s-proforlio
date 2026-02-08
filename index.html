@@ -1,221 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>myPortFL</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myPortFL</title>
+    <link rel="stylesheet" href="style.css">
 
-<style>
-/* ================= ROOT CONTROL ================= */
-:root {
-    --box-width: 300px;
-    --box-height: 420px;
+    <style>
+        /* ===== DIAGONAL CONTROL VARIABLES ===== */
+        :root {
+            --box-width: 300px;
+            --box-height: 400px;
 
-    --edge-gap: 30px;
-}
+            /* MORE SPACE BETWEEN BOXES */
+            --diag-x: 220px;
+            --diag-y: 180px;
 
-/* ================= BODY ================= */
-body {
-    margin: 0;
-    min-height: 100vh;
-    background: black;
-    overflow-x: hidden;
-    font-family: Arial, sans-serif;
-}
+            --edge-gap: 20px;
+        }
 
-/* ================= CENTER TEXT ================= */
-.content1 {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-}
+        /* ===== PORTFOLIO BOX STYLE ===== */
+        .portfolio-box {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-.content1 h1 {
-    color: white;
-    font-size: 42px;
-    font-weight: 600;
-}
+        .box-content {
+            color: white;
+            font-family: Arial, sans-serif;
+        }
 
-/* ================= PORTFOLIO BOX ================= */
-.portfolio-box {
-    position: absolute;
-    width: var(--box-width);
-    height: var(--box-height);
-    padding: 20px;
-    box-sizing: border-box;
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.9);
+        }
 
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(12px);
-    border-radius: 14px;
-    border: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-}
+        .placeholder {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 6px;
+            margin: 10px 0;
+            height: 20px;
+        }
 
-.box-content {
-    color: white;
-}
+        /* ===== DIAGONAL BOX ALIGNMENT ===== */
+        .box1 {
+            width: var(--box-width);
+            height: var(--box-height);
+            top: var(--edge-gap);
+            left: var(--edge-gap);
+        }
 
-.section-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
+        .box2 {
+            width: var(--box-width);
+            height: var(--box-height);
+            top: calc(var(--edge-gap) + var(--diag-y));
+            left: calc(var(--edge-gap) + var(--diag-x));
+        }
 
-/* ================= INNER BLOCKS ================= */
-.inner-rectangle {
-    background: rgba(255,255,255,0.15);
-    border-radius: 6px;
-    margin-bottom: 12px;
-    padding: 8px;
-}
+        .box3 {
+            width: var(--box-width);
+            height: var(--box-height);
+            top: calc(var(--edge-gap) + (var(--diag-y) * 2));
+            left: calc(var(--edge-gap) + (var(--diag-x) * 2));
+        }
 
-.rect-large { height: 130px; }
-.rect-medium { height: 60px; }
-.rect-small { min-height: 40px; }
+        .box4 {
+            width: 1090px;
+            height: 110px;
+            top: 900px;
+            left: 20px;
+        }
 
-/* IMAGE */
-.inner-rectangle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 6px;
-    display: block;
-}
+        /* ===== INNER RECTANGLES ===== */
+        .inner-rectangle {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            margin: 12px 0;
+        }
 
-/* ================= ICONS ================= */
-.triangle-icon {
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 18px solid rgba(255,255,255,0.5);
-    margin-bottom: 12px;
-}
+        .rect-large { height: 120px; }
+        .rect-medium { height: 60px; }
+        .rect-small { height: 40px; }
 
-.circle-icon {
-    width: 40px;
-    height: 40px;
-    background: rgba(255,255,255,0.3);
-    border-radius: 50%;
-    margin-bottom: 15px;
-}
+        /* ===== SMALL TRIANGLE ICON ===== */
+        .triangle-icon {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 18px solid rgba(255, 255, 255, 0.4);
+            margin-bottom: 12px;
+        }
 
-/* ================= POSITIONING ================= */
+        /* ===== CIRCLE ICON ===== */
+        .circle-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-/* BOX 1 → TOP LEFT */
-.box1 {
-    top: var(--edge-gap);
-    left: var(--edge-gap);
-}
+        .circle-icon::after {
+            content: "";
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+        }
 
-/* BOX 2 → CENTER */
-.box2 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+        /* ===== CONTACT ICONS ===== */
+        .contact-icons {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
 
-/* BOX 3 → BOTTOM LEFT (MIRROR OF BOX 1) */
-.box3 {
-    bottom: var(--edge-gap);
-    left: var(--edge-gap);
-}
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
 
-/* BOX 4 → FOOTER */
-.box4 {
-    width: 1100px;
-    height: 110px;
-    left: 50%;
-    bottom: 20px;
-    transform: translateX(-50%);
-}
+        .icon-placeholder {
+            width: 30px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
 
-/* CONTACTS */
-.contact-icons {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100%;
-}
-
-.icon-placeholder {
-    width: 30px;
-    height: 30px;
-    background: rgba(255,255,255,0.3);
-    border-radius: 4px;
-}
-</style>
+        .contact-text {
+            width: 80px;
+            height: 15px;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 3px;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- CENTER TITLE -->
-<div class="content1">
-    <h1>My Portfolio 🪽 Rocxam 🪽</h1>
-</div>
-
-<!-- BOX 1 -->
-<div class="portfolio-box box1">
-    <div class="box-content">
-        <div class="section-title">Content Section</div>
-        <div class="triangle-icon"></div>
-
-        <div class="inner-rectangle rect-large">
-            <img src="web/app/images/kongpic.jpg" alt="Kong Pic">
+    <!-- BACKGROUND / LEAVES / LOADER (UNCHANGED) -->
+    <div class="container">
+        <div class="loader">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
         </div>
+    </div>
 
-        <div class="inner-rectangle rect-medium">Kong Rocxam</div>
-        <div class="inner-rectangle rect-small">
-            we all gonna die so bloody just make sure you're happy
+    <!-- CENTER TEXT -->
+    <div class="content1">
+        <h1>My Portfolio🪽 Rocxam🪽</h1>
+    </div>
+
+    <div class="content2">
+        <p>life has many definitions and mine is ,life is life</p>
+    </div>
+
+    <!-- BOX 1 -->
+    <div class="portfolio-box box1">
+        <div class="box-content">
+            <div class="section-title">Content Section</div>
+            <div class="triangle-icon"></div>
+
+            <!-- HOME CONTENT -->
+            <div class=.inner-rectangle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    
+    border-radius: 4px;   
+    display: block;
+}
+></div>
+            <div class="inner-rectangle rect-medium"
+           > Kong Rocxam</div>
+            <div class="inner-rectangle rect-small">we all gona die so bloodi just make sure your happy </div>
+            <div class="inner-rectangle rect-small">but remember to be kind to yourself and others coz we never die we live forever  </div>
+            <div class="inner-rectangle rect-small">REN </div>
         </div>
-        <div class="inner-rectangle rect-small">
-            be kind to yourself and others — we live forever
+    </div>
+
+    <!-- BOX 2 -->
+    <div class="portfolio-box box2">
+        <div class="box-content">
+            <div class="section-title">Information Section</div>
+            <div class="circle-icon"></div>
+
+            <!-- ABOUT CONTENT -->
+            <div class="placeholder" style="width:90%"></div>
+            <div class="placeholder" style="width:80%"></div>
+            <div class="placeholder" style="width:85%"></div>
+            <div class="placeholder" style="width:70%"></div>
+            <div class="placeholder" style="width:95%"></div>
+            <div class="placeholder" style="width:75%"></div>
         </div>
-        <div class="inner-rectangle rect-small">REN</div>
     </div>
-</div>
 
-<!-- BOX 2 -->
-<div class="portfolio-box box2">
-    <div class="box-content">
-        <div class="section-title">Information Section</div>
-        <div class="circle-icon"></div>
+    <!-- BOX 3 -->
+    <div class="portfolio-box box3">
+        <div class="box-content">
+            <div class="section-title">Details Section</div>
+            <div class="triangle-icon"></div>
 
-        <div class="inner-rectangle"></div>
-        <div class="inner-rectangle"></div>
-        <div class="inner-rectangle"></div>
-        <div class="inner-rectangle"></div>
-        <div class="inner-rectangle"></div>
+            <!-- PROJECT CONTENT -->
+            <div class="placeholder" style="width:100%"></div>
+            <div class="placeholder" style="width:60%"></div>
+            <div class="placeholder" style="width:100%"></div>
+            <div class="placeholder" style="width:40%"></div>
+            <div class="placeholder" style="width:100%"></div>
+            <div class="placeholder" style="width:30%"></div>
+        </div>
     </div>
-</div>
 
-<!-- BOX 3 -->
-<div class="portfolio-box box3">
-    <div class="box-content">
-        <div class="section-title">Details Section</div>
-        <div class="triangle-icon"></div>
-
-        <div class="inner-rectangle"></div>
-        <div class="inner-rectangle"></div>
-        <div class="inner-rectangle"></div>
-        <div class="inner-rectangle"></div>
-        <div class="inner-rectangle"></div>
+    <!-- BOX 4 -->
+    <div class="portfolio-box box4">
+        <div class="box-content">
+            <div class="contact-icons">
+                <div class="contact-item"><div class="icon-placeholder"></div><div class="contact-text"></div></div>
+                <div class="contact-item"><div class="icon-placeholder"></div><div class="contact-text"></div></div>
+                <div class="contact-item"><div class="icon-placeholder"></div><div class="contact-text"></div></div>
+                <div class="contact-item"><div class="icon-placeholder"></div><div class="contact-text"></div></div>
+                <div class="contact-item"><div class="icon-placeholder"></div><div class="contact-text"></div></div>
+                <div class="contact-item"><div class="icon-placeholder"></div><div class="contact-text"></div></div>
+            </div>
+        </div>
     </div>
-</div>
 
-<!-- BOX 4 -->
-<div class="portfolio-box box4">
-    <div class="contact-icons">
-        <div class="icon-placeholder"></div>
-        <div class="icon-placeholder"></div>
-        <div class="icon-placeholder"></div>
-        <div class="icon-placeholder"></div>
-        <div class="icon-placeholder"></div>
-    </div>
-</div>
-
+    <script src="script.js"></script>
 </body>
 </html>
