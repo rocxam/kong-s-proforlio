@@ -198,27 +198,6 @@ body {
     animation-duration: 20s;
 }
 
-/* Rising animation */
-@keyframes rise {
-    0% {
-        transform: translateY(0) scale(1);
-        opacity: 0;
-    }
-    10% {
-        opacity: 0.3;
-    }
-    50% {
-        opacity: 0.6;
-    }
-    90% {
-        opacity: 0.2;
-    }
-    100% {
-        transform: translateY(-100vh) scale(1.2);
-        opacity: 0;
-    }
-}
-
 /* Content1 styling - Rocxam text (Brown) */
 .content1 h1 {
     color: #8B4513;
