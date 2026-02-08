@@ -5,21 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>myPortFL</title>
     <link rel="stylesheet" href="style.css">
-
     <style>
-        /* ===== DIAGONAL CONTROL VARIABLES ===== */
-        :root {
-            --box-width: 300px;
-            --box-height: 400px;
-
-            /* MORE SPACE BETWEEN BOXES */
-            --diag-x: 220px;
-            --diag-y: 180px;
-
-            --edge-gap: 20px;
-        }
-
-        /* ===== PORTFOLIO BOX STYLE ===== */
+        /* Additional styles for the boxes */
         .portfolio-box {
             position: absolute;
             background-color: rgba(255, 255, 255, 0.1);
@@ -50,57 +37,66 @@
             height: 20px;
         }
 
-        /* ===== DIAGONAL BOX ALIGNMENT ===== */
+        /* Diagonal positioning for boxes 1-3 */
         .box1 {
-            width: var(--box-width);
-            height: var(--box-height);
-            top: var(--edge-gap);
-            left: var(--edge-gap);
+            width: 300px;
+            height: 400px;
+            top: 20px; /* Very top with small margin */
+            left: 20px; /* Very left with small margin */
         }
 
         .box2 {
-            width: var(--box-width);
-            height: var(--box-height);
-            top: calc(var(--edge-gap) + var(--diag-y));
-            left: calc(var(--edge-gap) + var(--diag-x));
+            width: 300px;
+            height: 400px;
+            top: 120px; /* Positioned diagonally from box1 */
+            left: 320px; /* Right bottom corner aligned with box1 */
         }
 
         .box3 {
-            width: var(--box-width);
-            height: var(--box-height);
-            top: calc(var(--edge-gap) + (var(--diag-y) * 2));
-            left: calc(var(--edge-gap) + (var(--diag-x) * 2));
+            width: 300px;
+            height: 400px;
+            top: 220px; /* Continuing diagonal line */
+            right: 20px; /* Far right side */
         }
 
         .box4 {
-            width: 1090px;
-            height: 110px;
-            top: 900px;
+            width: 800px; /* Made longer */
+            height: 100px;
+            bottom: 20px;
             left: 20px;
         }
 
-        /* ===== INNER RECTANGLES ===== */
+        /* Inner rectangles for box1 (YouTube-style layout) */
         .inner-rectangle {
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 4px;
             margin: 12px 0;
         }
 
-        .rect-large { height: 120px; }
-        .rect-medium { height: 60px; }
-        .rect-small { height: 40px; }
+        .rect-large {
+            height: 120px;
+            margin-bottom: 20px;
+        }
 
-        /* ===== SMALL TRIANGLE ICON ===== */
+        .rect-medium {
+            height: 60px;
+        }
+
+        .rect-small {
+            height: 40px;
+        }
+
+        /* Triangle/icon shape */
         .triangle-icon {
             width: 0;
             height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-bottom: 18px solid rgba(255, 255, 255, 0.4);
-            margin-bottom: 12px;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 25px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 15px;
+            position: relative;
         }
 
-        /* ===== CIRCLE ICON ===== */
         .circle-icon {
             width: 40px;
             height: 40px;
@@ -120,7 +116,7 @@
             border-radius: 50%;
         }
 
-        /* ===== CONTACT ICONS ===== */
+        /* Contact icons in box4 */
         .contact-icons {
             display: flex;
             justify-content: space-around;
@@ -143,6 +139,7 @@
             border-radius: 4px;
         }
 
+        /* Additional placeholders for box4 */
         .contact-text {
             width: 80px;
             height: 15px;
@@ -151,10 +148,8 @@
         }
     </style>
 </head>
-
 <body>
-
-    <!-- BACKGROUND / LEAVES / LOADER (UNCHANGED) -->
+    <!-- Leaves Background -->
     <div class="container">
         <div class="loader">
             <span></span><span></span><span></span><span></span>
@@ -166,82 +161,108 @@
         </div>
     </div>
 
-    <!-- CENTER TEXT -->
+    <!-- Your existing content -->
     <div class="content1">
-        <h1>My Portfolio🪽 Rocxam🪽</h1>
+        <h1>My Portfolio</h1>
     </div>
-
     <div class="content2">
-        <p>life has many definitions and mine is ,life is life</p>
+         <p>life has many definitions and mine is ,life is life</p>
     </div>
 
-    <!-- BOX 1 -->
+    <!-- Four portfolio boxes as requested -->
+    <!-- Box 1: Top most left corner -->
     <div class="portfolio-box box1">
         <div class="box-content">
             <div class="section-title">Content Section</div>
+            <!-- Triangle/icon shape -->
             <div class="triangle-icon"></div>
-
-            <!-- HOME CONTENT -->
-            <div class=.inner-rectangle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;    
-    border-radius: 4px;   
-    display: block;
-}
-></div>
-            <div class="inner-rectangle rect-medium"
-           > Kong Rocxam</div>
-            <div class="inner-rectangle rect-small">we all gona die so bloodi just make sure your happy </div>
-            <div class="inner-rectangle rect-small">but remember to be kind to yourself and others coz we never die we live forever  </div>
-            <div class="inner-rectangle rect-small">REN </div>
+            <!-- Main content rectangle -->
+            <div class="inner-rectangle rect-large"></div>
+            <!-- Description rectangle -->
+            <div class="inner-rectangle rect-medium"></div>
+            <!-- Comment section rectangles -->
+            <div class="inner-rectangle rect-small"></div>
+            <div class="inner-rectangle rect-small"></div>
+            <div class="inner-rectangle rect-small"></div>
         </div>
     </div>
 
-    <!-- BOX 2 -->
+    <!-- Box 2: Diagonal alignment from box1 -->
     <div class="portfolio-box box2">
         <div class="box-content">
             <div class="section-title">Information Section</div>
+            <!-- Circle icon for profile picture -->
             <div class="circle-icon"></div>
-
-            <!-- ABOUT CONTENT -->
-            <div class="placeholder" style="width:90%"></div>
-            <div class="placeholder" style="width:80%"></div>
-            <div class="placeholder" style="width:85%"></div>
-            <div class="placeholder" style="width:70%"></div>
-            <div class="placeholder" style="width:95%"></div>
-            <div class="placeholder" style="width:75%"></div>
+            <!-- Placeholder text holders -->
+            <div class="placeholder" style="width: 90%;"></div>
+            <div class="placeholder" style="width: 80%;"></div>
+            <div class="placeholder" style="width: 85%;"></div>
+            <div class="placeholder" style="width: 70%;"></div>
+            <div class="placeholder" style="width: 95%;"></div>
+            <div class="placeholder" style="width: 75%;"></div>
         </div>
     </div>
 
-    <!-- BOX 3 -->
+    <!-- Box 3: Continuing diagonal line to bottom right -->
     <div class="portfolio-box box3">
         <div class="box-content">
             <div class="section-title">Details Section</div>
+            <!-- Triangle/icon shape -->
             <div class="triangle-icon"></div>
-
-            <!-- PROJECT CONTENT -->
-            <div class="placeholder" style="width:100%"></div>
-            <div class="placeholder" style="width:60%"></div>
-            <div class="placeholder" style="width:100%"></div>
-            <div class="placeholder" style="width:40%"></div>
-            <div class="placeholder" style="width:100%"></div>
-            <div class="placeholder" style="width:30%"></div>
+            <!-- More placeholder text holders -->
+            <div class="placeholder" style="width: 100%;"></div>
+            <div class="placeholder" style="width: 60%;"></div>
+            <div class="placeholder" style="width: 100%;"></div>
+            <div class="placeholder" style="width: 40%;"></div>
+            <div class="placeholder" style="width: 100%;"></div>
+            <div class="placeholder" style="width: 30%;"></div>
         </div>
     </div>
 
-    <!-- BOX 4 -->
+    <!-- Box 4: Longer horizontal rectangle at bottom left -->
     <div class="portfolio-box box4">
         <div class="box-content">
             <div class="contact-icons">
-                <div class="contact-item"><div class="icon-placeholder"></div><div class="contact-text"></div></div>
-                <div class="contact-item"><div class="icon-placeholder"></div><div class="contact-text"></div></div>
-                <div class="contact-item"><div class="icon-placeholder"></div><div class="contact-text"></div></div>
-                <div class="contact-item"><div class="icon-placeholder"></div><div class="contact-text"></div></div>
-                <div class="contact-item"><div class="icon-placeholder"></div><div class="contact-text"></div></div>
-                <div class="contact-item"><div class="icon-placeholder"></div><div class="contact-text"></div></div>
+                <div class="contact-item">
+                    <div class="icon-placeholder"></div>
+                    <div class="contact-text"></div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon-placeholder"></div>
+                    <div class="contact-text"></div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon-placeholder"></div>
+                    <div class="contact-text"></div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon-placeholder"></div>
+                    <div class="contact-text"></div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon-placeholder"></div>
+                    <div class="contact-text"></div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon-placeholder"></div>
+                    <div class="contact-text"></div>
+                </div>
             </div>
         </div>
+    </div>
+
+    <!-- Bubbles -->
+    <div class="bubbles-container">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
     </div>
 
     <script src="script.js"></script>
