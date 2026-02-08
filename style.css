@@ -219,155 +219,26 @@ body {
     }
 }
 
-/* Content1 styling - Rocxam text */
+/* Content1 styling - Rocxam text (Brown) */
 .content1 h1 {
-    color: #8B4513 !important; /* Brown color */
-    text-shadow: 
-        2px 2px 0 #A0522D,
-        4px 4px 0 #8B4513,
-        6px 6px 0 #654321 !important; /* 3D effect */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 900 !important;
-    letter-spacing: 2px;
-    text-align: center;
-    animation: floatText 3s ease-in-out infinite !important;
+    color: #8B4513;
 }
 
-@keyframes floatText {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-/* BOX 1 : HOME PAGE - Brown text with 3D and animation */
+/* BOX 1: HOME PAGE - All text Brown */
 .box1 .inner-rectangle {
-    color: #8B4513 !important; /* Brown color */
-    text-shadow: 
-        1px 1px 0 #A0522D,
-        2px 2px 0 #8B4513,
-        3px 3px 0 #654321 !important; /* 3D effect */
-    font-weight: bold !important;
-    font-family: 'Georgia', serif;
+    color: #8B4513;
 }
 
-/* Staggered animations for each rectangle in Box 1 */
-.box1 .rect-large {
-    animation: fadeInUp 0.8s ease-out 0.2s both !important;
-}
-
-.box1 .rect-medium {
-    animation: fadeInUp 0.8s ease-out 0.4s both !important;
-}
-
-.box1 .rect-small:nth-of-type(1) {
-    animation: fadeInUp 0.8s ease-out 0.6s both !important;
-}
-
-.box1 .rect-small:nth-of-type(2) {
-    animation: fadeInUp 0.8s ease-out 0.8s both !important;
-}
-
-.box1 .rect-small:nth-of-type(3) {
-    animation: fadeInUp 0.8s ease-out 1s both !important;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* BOX 3 : PROJECTS SECTION - Green text with 3D and animation */
+/* BOX 3: PROJECTS SECTION - All text Green */
 .box3 .placeholder {
-    color: #2E8B57 !important; /* Green color */
-    text-shadow: 
-        1px 1px 0 #3CB371,
-        2px 2px 0 #2E8B57,
-        3px 3px 0 #228B22 !important; /* 3D effect */
-    font-weight: bold !important;
-    font-family: 'Courier New', monospace;
+    color: #2E8B57;
 }
 
-.box3 .placeholder:nth-child(3) {
-    animation: slideInRight 0.8s ease-out 0.3s both !important;
-}
-
-.box3 .placeholder:nth-child(4) {
-    animation: slideInRight 0.8s ease-out 0.6s both !important;
-}
-
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* BOX 4 : CONTACT SECTION */
+/* BOX 4: CONTACT SECTION - Specific colors */
 .box4 .contact-item:nth-child(1) { /* Email - Brown */
-    color: #8B4513 !important;
-    text-shadow: 
-        1px 1px 0 #A0522D,
-        2px 2px 0 #8B4513,
-        3px 3px 0 #654321 !important; /* 3D effect */
-    font-weight: bold !important;
-    animation: pulseBrown 2s infinite !important;
-}
-
-.box4 .contact-item:nth-child(2) { /* Phone - Keep original */
-    color: white !important;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3) !important;
+    color: #8B4513;
 }
 
 .box4 .contact-item:nth-child(3) { /* GitHub - Green */
-    color: #2E8B57 !important;
-    text-shadow: 
-        1px 1px 0 #3CB371,
-        2px 2px 0 #2E8B57,
-        3px 3px 0 #228B22 !important; /* 3D effect */
-    font-weight: bold !important;
-    animation: pulseGreen 2s infinite !important;
-}
-
-@keyframes pulseBrown {
-    0%, 100% { 
-        transform: scale(1);
-        color: #8B4513;
-    }
-    50% { 
-        transform: scale(1.05);
-        color: #A0522D;
-    }
-}
-
-@keyframes pulseGreen {
-    0%, 100% { 
-        transform: scale(1);
-        color: #2E8B57;
-    }
-    50% { 
-        transform: scale(1.05);
-        color: #3CB371;
-    }
-}
-
-/* Hover effects */
-.box1 .inner-rectangle:hover,
-.box3 .placeholder:hover {
-    transform: translateY(-5px) !important;
-    transition: transform 0.3s ease !important;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2) !important;
-}
-
-.box4 .contact-item:hover {
-    transform: scale(1.1) !important;
-    transition: transform 0.3s ease !important;
+    color: #2E8B57;
 }
