@@ -9,7 +9,7 @@ body {
     background-color: #000;
     color: #fff;
     margin: 0;
-    padding: 0;
+    padding: 0 18px;
     font-family: 'Segoe UI', Arial, sans-serif;
     min-height: 100vh;
     overflow-x: hidden;
@@ -21,9 +21,26 @@ body {
     z-index: 2;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 40px 18px;
     box-sizing: border-box;
 }
+
+.portfolio-section {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+@media (max-width: 900px) {
+    .portfolio-container {
+        padding: 40px 14px;
+    }
+
+    .portfolio-section {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
 
 /* Desktop diagonal grid layout: positions sections from top-left to bottom-right */
 @media (min-width: 900px) {
