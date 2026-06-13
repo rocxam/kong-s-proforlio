@@ -20,7 +20,31 @@
         </div>
     </div>
 
-    <!-- Navigation removed to preserve artistic, floating diagonal layout -->
+    <!-- Floating Navigation Menu -->
+    <nav class="floating-nav">
+        <div class="nav-menu">
+            <a href="#home" class="nav-item active" data-section="home">
+                <span class="nav-dot"></span>
+                <span class="nav-text">Home</span>
+            </a>
+            <a href="#about" class="nav-item" data-section="about">
+                <span class="nav-dot"></span>
+                <span class="nav-text">About</span>
+            </a>
+            <a href="#background" class="nav-item" data-section="background">
+                <span class="nav-dot"></span>
+                <span class="nav-text">Background & Talents</span>
+            </a>
+            <a href="#projects" class="nav-item" data-section="projects">
+                <span class="nav-dot"></span>
+                <span class="nav-text">Projects & Drive</span>
+            </a>
+            <a href="#contact" class="nav-item" data-section="contact">
+                <span class="nav-dot"></span>
+                <span class="nav-text">Contact</span>
+            </a>
+        </div>
+    </nav>
 
     <!-- Main Portfolio Container -->
     <main class="portfolio-container">
@@ -70,54 +94,97 @@
 
         <!-- SECTION 3: BACKGROUND & TALENTS -->
         <section id="background" class="portfolio-section">
-            <div class="portfolio-box box-full">
+            <header class="section-heading">
+                <div class="section-title">Background & Talents</div>
+            </header>
+
+            <div class="portfolio-box diag-card diag-1" id="education">
                 <div class="box-content">
-                    <div class="section-title">Background & Talents</div>
+                    <div class="section-title">Education</div>
                     <div class="circle-icon"></div>
-
                     <div class="placeholder">
-                        <strong>Education:</strong> Pursuing a Bachelor of Science in Information Technology (BSIT) at Uganda Christian University (UCU). Alumnus of St. Joseph of Nazareth.
+                        Pursuing a Bachelor of Science in Information Technology (BSIT) at Uganda Christian University (UCU). Alumnus of St. Joseph of Nazareth.
                     </div>
+                </div>
+            </div>
 
+            <div class="portfolio-box diag-card diag-2" id="leadership">
+                <div class="box-content">
+                    <div class="section-title">Leadership</div>
+                    <div class="triangle-icon"></div>
                     <div class="placeholder">
-                        <strong>Leadership:</strong> Natural leader with proven ability to inspire and influence teams. I bridge the gap between technical excellence and human-centered solutions, empowering others to achieve ambitious goals and drive meaningful change in their communities and beyond.
+                        Natural leader with proven ability to inspire and influence teams. I bridge the gap between technical excellence and human-centered solutions, empowering others to achieve ambitious goals and drive meaningful change in their communities and beyond.
                     </div>
+                </div>
+            </div>
 
+            <div class="portfolio-box diag-card diag-3" id="creative-skills">
+                <div class="box-content">
+                    <div class="section-title">Creative Skills</div>
+                    <div class="circle-icon"></div>
                     <div class="placeholder">
-                        <strong>Creative Skills:</strong> Versatile capabilities in dynamic dancing, vocal performance, and professional music composition.
+                        Versatile capabilities in dynamic dancing, vocal performance, and professional music composition.
                     </div>
+                </div>
+            </div>
 
+            <div class="portfolio-box diag-card diag-4" id="technical-expertise">
+                <div class="box-content">
+                    <div class="section-title">Technical Expertise</div>
+                    <div class="triangle-icon"></div>
                     <div class="placeholder">
-                        <strong>Technical Expertise:</strong> Full-stack development, AI integration, platform architecture, and innovative problem-solving.
+                        Full-stack development, AI integration, platform architecture, and innovative problem-solving.
                     </div>
                 </div>
             </div>
         </section>
+        </section>
 
         <!-- SECTION 4: PROJECTS & DRIVE -->
         <section id="projects" class="portfolio-section">
-            <div class="portfolio-box box-full">
+            <header class="section-heading">
+                <div class="section-title">Projects & Drive</div>
+            </header>
+
+            <div class="portfolio-box diag-card proj-1" id="technical-frameworks">
                 <div class="box-content">
-                    <div class="section-title">Projects & Drive</div>
+                    <div class="section-title">Technical Frameworks</div>
                     <div class="triangle-icon"></div>
-
                     <div class="placeholder">
-                        <strong>Technical Frameworks:</strong> Active engineering developments including TrendUs (Personal AI platform), DocSry, Dundu-MST, Webbackend3, and my-ai-chat.
-                    </div>
-
-                    <div class="placeholder">
-                        <strong>African Enterprise:</strong> Innovator behind Dance and Sing Uganda (DnS-Uganda), structuring high-end local platforms to meet global standards.
-                    </div>
-
-                    <div class="placeholder">
-                        <strong>Inspiration (Elon Musk):</strong> "When something is important enough, you do it even if the odds are not in your favor."
-                    </div>
-
-                    <div class="placeholder">
-                        <strong>Current Focus:</strong> Building scalable solutions that empower communities and driving technological growth with measurable impact.
+                        Active engineering developments including TrendUs (Personal AI platform), DocSry, Dundu-MST, Webbackend3, and my-ai-chat.
                     </div>
                 </div>
             </div>
+
+            <div class="portfolio-box diag-card proj-2" id="african-enterprise">
+                <div class="box-content">
+                    <div class="section-title">African Enterprise</div>
+                    <div class="circle-icon"></div>
+                    <div class="placeholder">
+                        Innovator behind Dance and Sing Uganda (DnS-Uganda), structuring high-end local platforms to meet global standards.
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-box diag-card proj-3" id="inspiration">
+                <div class="box-content">
+                    <div class="section-title">Inspiration</div>
+                    <div class="triangle-icon"></div>
+                    <div class="placeholder">
+                        "When something is important enough, you do it even if the odds are not in your favor." — Elon Musk
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-box diag-card proj-4" id="current-focus">
+                <div class="box-content">
+                    <div class="section-title">Current Focus</div>
+                    <div class="placeholder">
+                        Building scalable solutions that empower communities and driving technological growth with measurable impact.
+                    </div>
+                </div>
+            </div>
+        </section>
         </section>
 
         <!-- SECTION 5: CONTACT -->

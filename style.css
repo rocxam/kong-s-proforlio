@@ -47,6 +47,35 @@ body {
     .portfolio-box { max-width: 100%; }
 }
 
+/* ==========================================
+   DIAGONAL FLOATING CARD STYLES
+   ========================================== */
+/* General small-card adjustments for split inner cards */
+.diag-card {
+    min-height: auto;
+    padding: 20px;
+    width: 340px;
+    box-sizing: border-box;
+}
+
+/* Background section stairs */
+#background .diag-1 { margin-left: 0; }
+#background .diag-2 { margin-left: 120px; transform: translateY(-8px); }
+#background .diag-3 { margin-left: 240px; transform: translateY(-16px); }
+#background .diag-4 { margin-left: 360px; transform: translateY(-24px); }
+
+/* Projects section stairs (shifted more to the right) */
+#projects .proj-1 { margin-left: 20px; }
+#projects .proj-2 { margin-left: 200px; transform: translateY(-8px); }
+#projects .proj-3 { margin-left: 380px; transform: translateY(-16px); }
+#projects .proj-4 { margin-left: 520px; transform: translateY(-24px); }
+
+.diag-card:hover { transform: translateY(-12px) scale(1.02); box-shadow: 0 12px 48px rgba(0,0,0,0.5); }
+
+/* Ensure the section heading does not count as a floating card */
+.section-heading { margin-bottom: 20px; }
+
+
 /* Header Text Blocks */
 .portfolio-header {
     text-align: center;
