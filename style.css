@@ -117,9 +117,7 @@ body {
 /* Home section stair offsets */
 #home .home-1 { margin-left: 12px; }
 #home .home-2 { margin-left: 100px; transform: translateY(-8px); }
-#home .home-3 { margin-left: 220px; transform: translateY(-16px); }
-#home .home-4 { margin-left: 360px; transform: translateY(-24px); }
-#home .home-5 { margin-left: 520px; transform: translateY(-32px); }
+#home .home-5 { margin-left: 220px; transform: translateY(-16px); }
 
 /* About section stair offsets */
 #about .about-1 { margin-left: 0; }
