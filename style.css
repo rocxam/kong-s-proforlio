@@ -119,12 +119,33 @@ body {
     pointer-events: none;
 }
 
+.nav-label {
+    margin-bottom: 12px;
+    padding: 8px 14px;
+    width: fit-content;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    pointer-events: auto;
+}
+
 .nav-menu {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
     pointer-events: auto;
-    width: 140px;
+    width: 150px;
+    padding: 12px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.14);
 }
 
 .nav-item {
@@ -132,14 +153,14 @@ body {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.66);
     transition: all 0.3s ease;
     font-size: 12px;
     font-weight: 500;
     padding: 12px 10px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     cursor: pointer;
     flex-direction: column;
@@ -148,17 +169,18 @@ body {
 }
 
 .nav-item:hover {
-    color: rgba(255, 255, 255, 0.9);
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: scale(1.1);
+    color: #fff;
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.24);
+    transform: scale(1.05);
+    box-shadow: 0 14px 30px rgba(255, 255, 255, 0.08);
 }
 
 .nav-item.active {
     color: #fff;
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(217, 183, 126, 0.35);
+    box-shadow: 0 0 24px rgba(217, 183, 126, 0.22);
     transform: scale(1.05);
 }
 
@@ -264,23 +286,25 @@ body {
    2. CARD STYLING & GLASSMORPHISM
    ========================================== */
 .portfolio-box {
-    background-color: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 18px;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.22);
     padding: 40px;
     box-sizing: border-box;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     min-height: 400px;
     display: flex;
     flex-direction: column;
 }
 
 .portfolio-box:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.28);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.05));
 }
 
 /* Home Section Card - Prominent */
@@ -303,22 +327,23 @@ body {
 }
 
 .section-title {
-    font-size: 1.2rem;
+    font-size: 1.22rem;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
+    color: #f4e7c8;
     transition: color 0.2s ease;
 }
 
 /* Custom UI Micro-rectangles */
 .inner-rectangle {
-    background-color: rgba(255, 255, 255, 0.08);
-    border-radius: 8px;
-    margin: 8px 0;
-    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 12px;
     font-size: 14px;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 .rect-large {
@@ -353,14 +378,14 @@ body {
     height: 0;
     border-left: 12px solid transparent;
     border-right: 12px solid transparent;
-    border-bottom: 20px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 20px solid rgba(217, 183, 126, 0.42);
     margin-bottom: 15px;
 }
 
 .circle-icon {
     width: 35px;
     height: 35px;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(217, 183, 126, 0.32);
     border-radius: 50%;
     margin-bottom: 15px;
 }
