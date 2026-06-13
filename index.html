@@ -31,28 +31,28 @@
 
         .box1 {
             width: 300px;
-            height: 400px;
+            height: 480px; 
             top: 20px;
             left: 20px;
         }
 
         .box2 {
-            width: 300px;
-            height: 400px;
-            top: 120px;
-            left: 320px;
+            width: 320px;
+            height: 440px;
+            top: 20px;
+            left: 340px;
         }
 
         .box3 {
-            width: 300px;
-            height: 400px;
-            top: 220px;
+            width: 320px;
+            height: 440px;
+            top: 20px;
             right: 20px;
         }
 
         .box4 {
-            width: 800px;
-            height: 100px;
+            width: 980px;
+            height: 120px;
             bottom: 20px;
             left: 20px;
         }
@@ -77,8 +77,8 @@
             border-radius: 4px;
         }
 
-        .rect-medium { height: 60px; }
-        .rect-small { height: 40px; }
+        .rect-medium { height: 60px; overflow-y: auto; }
+        .rect-small { height: 40px; display: flex; align-items: center; }
 
         .triangle-icon {
             width: 0;
@@ -101,7 +101,9 @@
             background-color: rgba(255, 255, 255, 0.15);
             border-radius: 6px;
             margin: 10px 0;
-            padding: 6px;
+            padding: 8px;
+            font-size: 13px;
+            line-height: 1.4;
         }
 
         .contact-icons {
@@ -123,7 +125,6 @@
 
 <body>
 
-    <!-- Background (unchanged) -->
     <div class="container">
         <div class="loader">
             <span></span><span></span><span></span><span></span>
@@ -135,18 +136,10 @@
         </div>
     </div>
 
-    <div class="content1">
-        <h1> 🪽Rocxam🪽</h1>
-    </div>
-
-    <div class="content2">
-        <p>life has many definitions and mine is ,life is death</p>
-    </div>
-
-    <!-- BOX 1 : HOME PAGE -->
+    <!-- BOX 1 : IDENTITY & PHILOSOPHY -->
     <div class="portfolio-box box1">
         <div class="box-content">
-            <div class="section-title">Home Page</div>
+            <div class="section-title">Rocxam</div>
             <div class="triangle-icon"></div>
 
             <div class="inner-rectangle rect-large">
@@ -154,62 +147,70 @@
             </div>
 
             <div class="inner-rectangle rect-medium">
-                we all gona die someday so make sure you are happy every  single day.
+                "Life has many definitions, and mine is that life balances death. Since our time is finite, make sure you pursue happiness every single day."
             </div>
 
-            <div class="inner-rectangle rect-small">Kong Rocxam</div>
-            <div class="inner-rectangle rect-small">REN</div>
-            <div class="inner-rectangle rect-small">
-                but remember to be kind to yoselL AND EVERYONE because  we never die
-            </div>
+            <div class="inner-rectangle rect-small"><strong>Identity:</strong> James Rocxam Kong</div>
+            <div class="inner-rectangle rect-small"><strong>Philosophy:</strong> Be kind to yourself and others; true energy never dies.</div>
+            <div class="inner-rectangle rect-small"><strong>Vision:</strong> Driving digital transformation and regional impact.</div>
         </div>
     </div>
 
-    <!-- BOX 2 : ABOUT SECTION -->
+    <!-- BOX 2 : ACADEMICS, LEADERSHIP & CREATIVE TALENTS -->
     <div class="portfolio-box box2">
         <div class="box-content">
-            <div class="section-title">About Section</div>
+            <div class="section-title">Background & Talents</div>
             <div class="circle-icon"></div>
 
             <div class="placeholder">
-                Academic Background: St. Joseph of Nazareth (High School)
+                <strong>Education:</strong> Pursuing a Bachelor of Science in Information Technology (BSIT) at Uganda Christian University (UCU). Alumnus of St. Joseph of Nazareth.
             </div>
 
             <div class="placeholder">
-                Interests: Fame and Money
+                <strong>Leadership:</strong> Serving as the Group 18 Innovation Team Leader, acting as an influential driving force to bridge technical execution with community-driven solutions.
+            </div>
+
+            <div class="placeholder">
+                <strong>Creative Skills:</strong> Versatile capabilities in dynamic dancing, vocal performance, and professional music composition.
             </div>
         </div>
     </div>
 
-    <!-- BOX 3 : PROJECTS SECTION -->
+    <!-- BOX 3 : ECOSYSTEM PROJECTS & INSPIRATION -->
     <div class="portfolio-box box3">
         <div class="box-content">
-            <div class="section-title">Projects Section</div>
+            <div class="section-title">Projects & Drive</div>
             <div class="triangle-icon"></div>
 
             <div class="placeholder">
-                TrendUs – Personal AI Project
+                <strong>Technical Frameworks:</strong> Active engineering developments including TrendUs (Personal AI platform), DocSry, Dundu-MST, Webbackend3, and my-ai-chat.
             </div>
 
             <div class="placeholder">
-                Dance and Sing Uganda (DnS-Uganda)
+                <strong>African Enterprise:</strong> Innovator behind Dance and Sing Uganda (DnS-Uganda), structuring high-end local platforms to meet global standards.
+            </div>
+
+            <div class="placeholder">
+                <strong>Inspiration (Elon Musk):</strong> "When something is important enough, you do it even if the odds are not in your favor."
             </div>
         </div>
     </div>
 
-    <!-- BOX 4 : CONTACT SECTION -->
+    <!-- BOX 4 : CONTACTS & AMBITION -->
     <div class="portfolio-box box4">
         <div class="box-content">
             <div class="contact-icons">
                 <div class="contact-item">
-                    Email<br>rocxamkong@gmail.com
+                    <strong>Email</strong> rocxamkong@gmail.com
                 </div>
                 <div class="contact-item">
-                    Phone<br>0772273270
+                    <strong>Phone</strong> 0772273270
                 </div>
                 <div class="contact-item">
-                    GitHub<br>
-                    github.com/rocxam/kong-s-proforlio
+                    <strong>GitHub</strong> github.com/rocxam
+                </div>
+                <div class="contact-item">
+                    <strong>Ambition</strong> Technological Growth, Influence & Venture Success
                 </div>
             </div>
         </div>

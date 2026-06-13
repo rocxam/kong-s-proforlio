@@ -1,6 +1,5 @@
 console.log("🎯 JavaScript is starting...");
 
-// Wait for page to load
 document.addEventListener('DOMContentLoaded', function() {
     console.log("✅ Page is ready!");
     

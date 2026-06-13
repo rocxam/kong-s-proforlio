@@ -1,22 +1,196 @@
-/* Set page background to pure black */
+/* ==========================================
+   1. GLOBAL & BASE STYLES
+   ========================================== */
 body {
     background-color: #000;
+    color: #fff;
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
-/* Leaves Background */
+/* Base Wrapper Setup */
+.portfolio-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* Header Text Blocks */
+.portfolio-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.main-title {
+    font-size: 3rem;
+    margin: 0 0 10px 0;
+    letter-spacing: 2px;
+}
+
+.main-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* ==========================================
+   2. BENTO GRID LAYOUT SYSTEM
+   ========================================== */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* Glassmorphism Cards */
+.portfolio-box {
+    background-color: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    padding: 25px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.portfolio-box:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Box Grid Sizing Definitions */
+.box1 {
+    grid-column: 1 / 2;
+    grid-row: span 2;
+}
+
+.box2 {
+    grid-column: 2 / 3;
+}
+
+.box3 {
+    grid-column: 3 / 4;
+}
+
+.box4 {
+    grid-column: 2 / 4;
+}
+
+/* ==========================================
+   3. INTERNAL COMPONENT UI STYLES
+   ========================================== */
+.box-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.2s ease;
+}
+
+/* Custom UI Micro-rectangles */
+.inner-rectangle {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    margin: 8px 0;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.rect-large {
+    height: 160px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.rect-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name-highlight {
+    font-weight: bold;
+    color: #ffd700; /* Warm gold highlight */
+}
+
+.placeholder {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 14px;
+}
+
+/* Interface Icons */
+.triangle-icon {
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 20px solid rgba(255, 255, 255, 0.4);
+    margin-bottom: 15px;
+}
+
+.circle-icon {
+    width: 35px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* Footer & Contact Formatting */
+.contact-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 14px;
+}
+
+.contact-item span {
+    font-size: 11px;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+/* ==========================================
+   4. BACKGROUND ANIMATIONS SECTION
+   ========================================== */
+/* Ambient Leaves Engine */
 .container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    z-index: -1;
+    z-index: 1;
     overflow: hidden;
-    /* Add the autumn background image */
-    
+    pointer-events: none;
 }
 
 .loader {
@@ -27,73 +201,34 @@ body {
 
 .loader span {
     display: inline-block;
-    width: 80px;
-    height: 80px;
-    margin: -280px 40px 54px -34px;
+    width: 40px;
+    height: 40px;
+    margin: -150px 40px 54px -34px;
     background: url("http://premiumcoding.com/CSSTricks/fallingLeaves/leaf.png") center/contain no-repeat;
-    opacity: 0.7;
-    animation: fall 10s infinite linear;
+    opacity: 0.4;
+    animation: fall 12s infinite linear;
 }
 
-/* Animation delays */
-.loader span:nth-child(5n+5) { animation-delay: 1.3s; }
-.loader span:nth-child(3n+2) { animation-delay: 1.5s; }
-.loader span:nth-child(2n+5) { animation-delay: 1.7s; }
-.loader span:nth-child(3n+10) { animation-delay: 2.7s; }
-.loader span:nth-child(7n+2) { animation-delay: 3.5s; }
-.loader span:nth-child(4n+5) { animation-delay: 5.5s; }
-.loader span:nth-child(3n+7) { animation-delay: 8s; }
+/* Leaf Animation Timing Multipliers */
+.loader span:nth-child(5n+5) { animation-delay: 1.3s; width: 45px; }
+.loader span:nth-child(3n+2) { animation-delay: 2.5s; }
+.loader span:nth-child(2n+5) { animation-delay: 4.7s; width: 30px; }
+.loader span:nth-child(3n+10) { animation-delay: 6.1s; }
 
-/* Falling animation */
 @keyframes fall {
-    0% {
-        opacity: 0.8;
-        transform: translate(0, 0) rotate(0deg);
-    }
-    75% {
-        opacity: 0.6;
-        transform: translate(100px, 600px) rotate(270deg);
-    }
-    100% {
-        opacity: 0;
-        transform: translate(150px, 800px) rotate(360deg);
-    }
+    0% { opacity: 0.6; transform: translate(0, 0) rotate(0deg); }
+    75% { opacity: 0.4; transform: translate(100px, 60vh) rotate(270deg); }
+    100% { opacity: 0; transform: translate(150px, 100vh) rotate(360deg); }
 }
 
-/* Content1 */
-.content1 {
-    position: relative;
-    z-index: 1;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;}
-    /* Content2*/
-    .content2 {
-        position: relative;
-        z-index: 1;
-        color: white;
-        text-align: left;
-        padding: 20px;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-}
-/* Water Bubbles */
+/* Ambient Liquid Bubble Engine */
 .bubbles-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 1;
     overflow: hidden;
     pointer-events: none;
 }
@@ -101,99 +236,36 @@ body {
 .bubble {
     position: absolute;
     bottom: -100px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 50%;
     animation: rise 15s infinite ease-in;
 }
 
-.bubble:before {
-    content: '';
-    position: absolute;
-    width: 30%;
-    height: 30%;
-    background: rgba(40, 40, 234, 0.2);
-    border-radius: 50%;
-    top: 20%;
-    left: 20%;
+@keyframes rise {
+    0% { bottom: -100px; transform: translateX(0); opacity: 0; }
+    10% { opacity: 0.5; }
+    90% { opacity: 0.5; }
+    100% { bottom: 100vh; transform: translateX(100px); opacity: 0; }
 }
 
-/* Different bubble sizes */
-.bubble:nth-child(1) {
-    width: 40px;
-    height: 40px;
-    left: 10%;
-    animation-delay: 0s;
-    animation-duration: 12s;
-}
+/* Bubble Node Sizing Allocations */
+.bubble:nth-child(1) { width: 40px; height: 40px; left: 10%; animation-delay: 0s; animation-duration: 12s; }
+.bubble:nth-child(2) { width: 20px; height: 20px; left: 20%; animation-delay: 1.5s; animation-duration: 10s; }
+.bubble:nth-child(3) { width: 50px; height: 50px; left: 35%; animation-delay: 3s; animation-duration: 15s; }
+.bubble:nth-child(4) { width: 75px; height: 75px; left: 50%; animation-delay: 5s; animation-duration: 18s; }
+.bubble:nth-child(5) { width: 30px; height: 30px; left: 65%; animation-delay: 2s; animation-duration: 11s; }
+.bubble:nth-child(6) { width: 60px; height: 60px; left: 80%; animation-delay: 4.2s; animation-duration: 14s; }
+.bubble:nth-child(7) { width: 25px; height: 25px; left: 93%; animation-delay: 6s; animation-duration: 9s; }
+.bubble:nth-child(8) { width: 45px; height: 45px; left: 72%; animation-delay: 7.5s; animation-duration: 13s; }
 
-.bubble:nth-child(2) {
-    width: 20px;
-    height: 20px;
-    left: 20%;
-    animation-delay: 1s;
-    animation-duration: 10s;
-}
-
-.bubble:nth-child(3) {
-    width: 50px;
-    height: 50px;
-    left: 35%;
-    animation-delay: 3s;
-    animation-duration: 15s;
-}
-
-.bubble:nth-child(4) {
-    width: 80px;
-    height: 80px;
-    left: 50%;
-    animation-delay: 5s;
-    animation-duration: 18s;
-}
-
-.bubble:nth-child(5) {
-    width: 30px;
-    height: 30px;
-    left: 65%;
-    animation-delay: 2s;
-    animation-duration: 11s;
-}
-
-.bubble:nth-child(6) {
-    width: 60px;
-    height: 60px;
-    left: 80%;
-    animation-delay: 4s;
-    animation-duration: 14s;
-}
-
-.bubble:nth-child(7) {
-    width: 25px;
-    height: 25px;
-    left: 90%;
-    animation-delay: 6s;
-    animation-duration: 9s;
-}
-
-.bubble:nth-child(8) {
-    width: 45px;
-    height: 45px;
-    left: 70%;
-    animation-delay: 7s;
-    animation-duration: 13s;
-}
-
-.bubble:nth-child(9) {
-    width: 35px;
-    height: 35px;
-    left: 30%;
-    animation-delay: 8s;
-    animation-duration: 16s;
-}
-
-.bubble:nth-child(10) {
-    width: 70px;
-    height: 70px;
-    left: 5%;
-    animation-delay: 9s;
-    animation-duration: 21s;
+/* ==========================================
+   5. RESPONSIVE MOBILE VIEWPORT CONTROLS
+   ========================================== */
+@media (max-width: 900px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    .box1, .box2, .box3, .box4 {
+        grid-column: span 1;
+    }
 }
