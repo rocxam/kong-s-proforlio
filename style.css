@@ -206,11 +206,12 @@ body {
     }
 
     /* Positions: arranged diagonally from top-left to bottom-right */
-    #home { left: 12%; top: 12%; }
-    #about { left: 32%; top: 28%; }
-    #background { left: 52%; top: 42%; }
-    #projects { left: 68%; top: 58%; }
-    #contact { left: 86%; top: 80%; }
+    /* Positions: arranged diagonally from top-left to bottom-right with increased spacing */
+    #home { left: 10%; top: 12%; z-index: 50; }
+    #about { left: 30%; top: 28%; z-index: 40; }
+    #background { left: 50%; top: 44%; z-index: 35; }
+    #projects { left: 68%; top: 60%; z-index: 30; }
+    #contact { left: 86%; top: 78%; z-index: 25; }
 
     /* TALENTS is separated from BACKGROUND and placed along the diagonal chain */
     #background + section#talents, #talents { display: none; }
@@ -220,13 +221,24 @@ body {
 
     /* Card sizing for the floating nodes */
     .portfolio-box {
-        max-width: 420px;
-        min-width: 260px;
-        padding: 28px;
+        max-width: 360px;
+        min-width: 240px;
+        padding: 22px;
+        box-sizing: border-box;
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+        will-change: transform, box-shadow;
+        /* transform combines parallax variables with hover offset */
+        transform: translate(var(--parallaxX, 0px), var(--parallaxY, 0px)) translateY(var(--hoverY, 0px));
+        --parallaxX: 0px;
+        --parallaxY: 0px;
+        --hoverY: 0px;
     }
 
-    /* Slight hover lift to emphasize floating nodes */
-    .portfolio-box:hover { transform: translateY(-8px); }
+    /* Hover uses CSS variable so JS parallax doesn't override it */
+    .portfolio-box:hover {
+        --hoverY: -12px;
+        box-shadow: 0 18px 50px rgba(0,0,0,0.55);
+    }
 
     @media (max-width: 1100px) {
         /* Compress diagonal spread on narrower screens */
