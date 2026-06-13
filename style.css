@@ -9,7 +9,7 @@ body {
     background-color: #000;
     color: #fff;
     margin: 0;
-    padding: 0 44px;
+    padding: 0 52px;
     font-family: 'Segoe UI', Arial, sans-serif;
     min-height: 100vh;
     overflow-x: hidden;
@@ -21,7 +21,7 @@ body {
     z-index: 2;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 40px 44px;
+    padding: 40px 52px;
     box-sizing: border-box;
 }
 
@@ -115,7 +115,7 @@ body {
 .section-heading { margin-bottom: 20px; }
 
 /* Home section stair offsets */
-#home .home-1 { margin-left: 0; }
+#home .home-1 { margin-left: 12px; }
 #home .home-2 { margin-left: 100px; transform: translateY(-8px); }
 #home .home-3 { margin-left: 220px; transform: translateY(-16px); }
 #home .home-4 { margin-left: 360px; transform: translateY(-24px); }
@@ -346,9 +346,9 @@ body {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.05));
 }
 
-/* Home Section Card - More compact */
+/* Home Section Card - More compact but image-friendly */
 #home .portfolio-box {
-    min-height: 420px;
+    min-height: 460px;
 }
 
 /* Contact Card - Wider */
@@ -386,16 +386,17 @@ body {
 }
 
 .rect-large {
-    height: 220px;
+    height: 260px;
     overflow: hidden;
     padding: 0;
 }
 
 .rect-large img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.06);
 }
 
 .name-highlight {
