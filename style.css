@@ -19,9 +19,9 @@ body {
 .portfolio-container {
     position: relative;
     z-index: 2;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 60px 20px;
+    padding: 40px 20px;
     box-sizing: border-box;
 }
 
@@ -56,38 +56,36 @@ body {
 }
 
 .nav-menu {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 15px;
     pointer-events: auto;
-    width: 140px;
 }
 
 .nav-item {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.5);
     transition: all 0.3s ease;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
-    padding: 12px 10px;
+    padding: 10px 15px;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.02);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     cursor: pointer;
-    flex-direction: column;
-    gap: 6px;
-    min-height: 50px;
+    gap: 12px;
+    flex-direction: row;
 }
 
 .nav-item:hover {
     color: rgba(255, 255, 255, 0.9);
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.2);
-    transform: scale(1.1);
+    transform: translateX(-5px);
 }
 
 .nav-item.active {
@@ -95,7 +93,7 @@ body {
     background: rgba(255, 255, 255, 0.12);
     border-color: rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
-    transform: scale(1.05);
+    transform: translateX(-5px);
 }
 
 .nav-dot {
@@ -115,27 +113,24 @@ body {
 }
 
 .nav-text {
-    white-space: normal;
+    white-space: nowrap;
     opacity: 1;
     max-width: 100%;
     transition: all 0.3s ease;
     overflow: hidden;
-    text-align: center;
-    font-size: 10px;
-    line-height: 1.2;
 }
 
 /* ==========================================
    1.6. PORTFOLIO SECTIONS
    ========================================== */
 .portfolio-section {
-    min-height: 100vh;
+    min-height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
-    animation: fadeIn 0.8s ease forwards;
+    opacity: 1;
     scroll-margin-top: 80px;
+    padding: 60px 20px;
 }
 
 .portfolio-section.active {
@@ -153,6 +148,32 @@ body {
     }
 }
 
+/* Diagonal arrangement of sections */
+#home {
+    margin-left: 0;
+    margin-top: 0;
+}
+
+#about {
+    margin-left: 60px;
+    margin-top: 40px;
+}
+
+#background {
+    margin-left: 120px;
+    margin-top: 40px;
+}
+
+#projects {
+    margin-left: 60px;
+    margin-top: 40px;
+}
+
+#contact {
+    margin-left: 0;
+    margin-top: 40px;
+}
+
 /* Section-specific card layouts */
 #home .portfolio-box {
     max-width: 500px;
@@ -163,19 +184,19 @@ body {
 #background .portfolio-box,
 #projects .portfolio-box,
 #contact .portfolio-box {
-    max-width: 800px;
+    max-width: 500px;
     margin: 0 auto;
     width: 100%;
 }
 
 .box-full {
     width: 100%;
-    max-width: 800px;
+    max-width: 500px;
 }
 
 .box-contact {
     width: 100%;
-    max-width: 900px;
+    max-width: 700px;
 }
 
 /* Header Text Blocks */
@@ -413,16 +434,25 @@ body {
     }
 
     .nav-item {
-        padding: 10px 8px;
-        font-size: 12px;
-    }
-
-    .nav-text {
-        font-size: 11px;
+        padding: 8px 12px;
+        font-size: 13px;
     }
 
     .portfolio-box {
         padding: 30px;
+    }
+
+    /* Adjust diagonal margins on tablet */
+    #about {
+        margin-left: 40px;
+    }
+
+    #background {
+        margin-left: 80px;
+    }
+
+    #projects {
+        margin-left: 40px;
     }
 }
 
@@ -436,25 +466,51 @@ body {
     }
 
     .nav-menu {
-        grid-template-columns: 1fr 1fr;
+        flex-direction: column;
         gap: 8px;
-        width: auto;
     }
 
     .nav-item {
-        padding: 8px;
-        font-size: 11px;
-        min-height: 45px;
+        padding: 8px 12px;
+        font-size: 12px;
+        flex-direction: row;
     }
 
     .nav-text {
-        font-size: 9px;
+        display: none;
     }
 
-    /* Portfolio Sections */
+    /* Portfolio Sections - Remove diagonal on mobile */
     .portfolio-section {
         min-height: auto;
-        padding: 40px 0;
+        padding: 30px 0;
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    #home {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    #about {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    #background {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    #projects {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    #contact {
+        margin-left: 0;
+        margin-top: 0;
     }
 
     .portfolio-box {
@@ -473,7 +529,7 @@ body {
 
     /* Container adjustments */
     .portfolio-container {
-        padding: 40px 15px;
+        padding: 30px 15px;
     }
 
     /* Contact icons layout */
