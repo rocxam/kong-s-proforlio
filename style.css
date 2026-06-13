@@ -56,34 +56,38 @@ body {
 }
 
 .nav-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
     pointer-events: auto;
+    width: 140px;
 }
 
 .nav-item {
     display: flex;
     align-items: center;
-    gap: 12px;
+    justify-content: center;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.5);
     transition: all 0.3s ease;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
-    padding: 10px 15px;
+    padding: 12px 10px;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.02);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+    min-height: 50px;
 }
 
 .nav-item:hover {
     color: rgba(255, 255, 255, 0.9);
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.2);
-    transform: translateX(-5px);
+    transform: scale(1.1);
 }
 
 .nav-item.active {
@@ -91,6 +95,7 @@ body {
     background: rgba(255, 255, 255, 0.12);
     border-color: rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+    transform: scale(1.05);
 }
 
 .nav-dot {
@@ -110,17 +115,14 @@ body {
 }
 
 .nav-text {
-    white-space: nowrap;
-    opacity: 0;
-    max-width: 0;
+    white-space: normal;
+    opacity: 1;
+    max-width: 100%;
     transition: all 0.3s ease;
     overflow: hidden;
-}
-
-.nav-item:hover .nav-text,
-.nav-item.active .nav-text {
-    opacity: 1;
-    max-width: 150px;
+    text-align: center;
+    font-size: 10px;
+    line-height: 1.2;
 }
 
 /* ==========================================
@@ -411,8 +413,12 @@ body {
     }
 
     .nav-item {
-        padding: 8px 12px;
-        font-size: 13px;
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+
+    .nav-text {
+        font-size: 11px;
     }
 
     .portfolio-box {
@@ -430,25 +436,19 @@ body {
     }
 
     .nav-menu {
-        flex-direction: row;
+        grid-template-columns: 1fr 1fr;
         gap: 8px;
-        justify-content: center;
-        flex-wrap: wrap;
+        width: auto;
     }
 
     .nav-item {
-        padding: 6px 10px;
-        font-size: 12px;
-        background: rgba(255, 255, 255, 0.05);
+        padding: 8px;
+        font-size: 11px;
+        min-height: 45px;
     }
 
     .nav-text {
-        display: none;
-    }
-
-    .nav-item:hover .nav-text,
-    .nav-item.active .nav-text {
-        display: none;
+        font-size: 9px;
     }
 
     /* Portfolio Sections */
