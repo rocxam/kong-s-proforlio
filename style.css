@@ -179,7 +179,72 @@ body {
     max-width: 500px;
     margin: 0 auto;
 }
+    /* ==========================================
+       Diagonal floating card layout (absolute positions)
+       ========================================== */
 
+    /* Ensure the main container fills the viewport and cards float above background */
+    .portfolio-container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: visible;
+    }
+
+    /* Keep body from vertically scrolling to preserve the single-screen, diagonal layout */
+    html, body {
+        height: 100%;
+    }
+    body {
+        overflow: hidden;
+    }
+
+    .portfolio-section {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        will-change: transform, opacity;
+    }
+
+    /* Positions: arranged diagonally from top-left to bottom-right */
+    #home { left: 12%; top: 12%; }
+    #about { left: 32%; top: 28%; }
+    #background { left: 52%; top: 42%; }
+    #projects { left: 68%; top: 58%; }
+    #contact { left: 86%; top: 80%; }
+
+    /* TALENTS is separated from BACKGROUND and placed along the diagonal chain */
+    #background + section#talents, #talents { display: none; }
+
+    /* If a dedicated talents id exists, position it (fallback) */
+    #talents { left: 72%; top: 46%; display: block; }
+
+    /* Card sizing for the floating nodes */
+    .portfolio-box {
+        max-width: 420px;
+        min-width: 260px;
+        padding: 28px;
+    }
+
+    /* Slight hover lift to emphasize floating nodes */
+    .portfolio-box:hover { transform: translateY(-8px); }
+
+    @media (max-width: 1100px) {
+        /* Compress diagonal spread on narrower screens */
+        #home { left: 10%; top: 10%; }
+        #about { left: 30%; top: 26%; }
+        #background { left: 50%; top: 42%; }
+        #projects { left: 70%; top: 60%; }
+        #contact { left: 88%; top: 80%; }
+        .portfolio-box { max-width: 380px; }
+    }
+
+    @media (max-width: 768px) {
+        /* For mobile, maintain visual diagonal but keep layout usable */
+        body { overflow: auto; }
+        .portfolio-container { height: auto; }
+        .portfolio-section { position: relative; transform: none; left: auto; top: auto; margin: 18px auto; }
+        .portfolio-box { max-width: 92%; }
+    }
 #about .portfolio-box,
 #background .portfolio-box,
 #projects .portfolio-box,
