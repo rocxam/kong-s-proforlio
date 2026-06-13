@@ -75,6 +75,19 @@ body {
 /* Ensure the section heading does not count as a floating card */
 .section-heading { margin-bottom: 20px; }
 
+/* Home section stair offsets */
+#home .home-1 { margin-left: 0; }
+#home .home-2 { margin-left: 100px; transform: translateY(-8px); }
+#home .home-3 { margin-left: 220px; transform: translateY(-16px); }
+#home .home-4 { margin-left: 360px; transform: translateY(-24px); }
+#home .home-5 { margin-left: 520px; transform: translateY(-32px); }
+
+/* About section stair offsets */
+#about .about-1 { margin-left: 0; }
+#about .about-2 { margin-left: 120px; transform: translateY(-10px); }
+#about .about-3 { margin-left: 260px; transform: translateY(-20px); }
+#about .about-4 { margin-left: 380px; transform: translateY(-28px); }
+
 
 /* Header Text Blocks */
 .portfolio-header {
