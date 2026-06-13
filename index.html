@@ -5,126 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>myPortFL</title>
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        .portfolio-box {
-            position: absolute;
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .box-content {
-            color: white;
-            font-family: Arial, sans-serif;
-        }
-
-        .section-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .box1 {
-            width: 300px;
-            height: 480px; 
-            top: 20px;
-            left: 20px;
-        }
-
-        .box2 {
-            width: 320px;
-            height: 440px;
-            top: 20px;
-            left: 340px;
-        }
-
-        .box3 {
-            width: 320px;
-            height: 440px;
-            top: 20px;
-            right: 20px;
-        }
-
-        .box4 {
-            width: 980px;
-            height: 120px;
-            bottom: 20px;
-            left: 20px;
-        }
-
-        .inner-rectangle {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            margin: 10px 0;
-            padding: 6px;
-            font-size: 14px;
-        }
-
-        .rect-large {
-            height: 120px;
-            overflow: hidden;
-        }
-
-        .rect-large img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 4px;
-        }
-
-        .rect-medium { height: 60px; overflow-y: auto; }
-        .rect-small { height: 40px; display: flex; align-items: center; }
-
-        .triangle-icon {
-            width: 0;
-            height: 0;
-            border-left: 15px solid transparent;
-            border-right: 15px solid transparent;
-            border-bottom: 25px solid rgba(255, 255, 255, 0.3);
-            margin-bottom: 10px;
-        }
-
-        .circle-icon {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            margin-bottom: 15px;
-        }
-
-        .placeholder {
-            background-color: rgba(255, 255, 255, 0.15);
-            border-radius: 6px;
-            margin: 10px 0;
-            padding: 8px;
-            font-size: 13px;
-            line-height: 1.4;
-        }
-
-        .contact-icons {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            height: 100%;
-        }
-
-        .contact-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            font-size: 13px;
-        }
-    </style>
 </head>
 
 <body>
-
+    <!-- Background Animations -->
     <div class="container">
         <div class="loader">
             <span></span><span></span><span></span><span></span>
@@ -136,85 +20,159 @@
         </div>
     </div>
 
-    <!-- BOX 1 : IDENTITY & PHILOSOPHY -->
-    <div class="portfolio-box box1">
-        <div class="box-content">
-            <div class="section-title">Rocxam</div>
-            <div class="triangle-icon"></div>
-
-            <div class="inner-rectangle rect-large">
-                <img src="kongpic.jpeg" alt="Kong Rocxam">
-            </div>
-
-            <div class="inner-rectangle rect-medium">
-                "Life has many definitions, and mine is that life balances death. Since our time is finite, make sure you pursue happiness every single day."
-            </div>
-
-            <div class="inner-rectangle rect-small"><strong>Identity:</strong> James Rocxam Kong</div>
-            <div class="inner-rectangle rect-small"><strong>Philosophy:</strong> Be kind to yourself and others; true energy never dies.</div>
-            <div class="inner-rectangle rect-small"><strong>Vision:</strong> Driving digital transformation and regional impact.</div>
+    <!-- Floating Navigation Menu -->
+    <nav class="floating-nav">
+        <div class="nav-menu">
+            <a href="#home" class="nav-item active" data-section="home">
+                <span class="nav-dot"></span>
+                <span class="nav-text">Home</span>
+            </a>
+            <a href="#about" class="nav-item" data-section="about">
+                <span class="nav-dot"></span>
+                <span class="nav-text">About</span>
+            </a>
+            <a href="#background" class="nav-item" data-section="background">
+                <span class="nav-dot"></span>
+                <span class="nav-text">Background & Talents</span>
+            </a>
+            <a href="#projects" class="nav-item" data-section="projects">
+                <span class="nav-dot"></span>
+                <span class="nav-text">Projects & Drive</span>
+            </a>
+            <a href="#contact" class="nav-item" data-section="contact">
+                <span class="nav-dot"></span>
+                <span class="nav-text">Contact</span>
+            </a>
         </div>
-    </div>
+    </nav>
 
-    <!-- BOX 2 : ACADEMICS, LEADERSHIP & CREATIVE TALENTS -->
-    <div class="portfolio-box box2">
-        <div class="box-content">
-            <div class="section-title">Background & Talents</div>
-            <div class="circle-icon"></div>
+    <!-- Main Portfolio Container -->
+    <main class="portfolio-container">
+        <!-- SECTION 1: HOME / IDENTITY & PHILOSOPHY -->
+        <section id="home" class="portfolio-section active">
+            <div class="portfolio-box box1">
+                <div class="box-content">
+                    <div class="section-title">Rocxam</div>
+                    <div class="triangle-icon"></div>
 
-            <div class="placeholder">
-                <strong>Education:</strong> Pursuing a Bachelor of Science in Information Technology (BSIT) at Uganda Christian University (UCU). Alumnus of St. Joseph of Nazareth.
-            </div>
+                    <div class="inner-rectangle rect-large">
+                        <img src="kongpic.jpeg" alt="Kong Rocxam">
+                    </div>
 
-            <div class="placeholder">
-                <strong>Leadership:</strong> Serving as the Group 18 Innovation Team Leader, acting as an influential driving force to bridge technical execution with community-driven solutions.
-            </div>
+                    <div class="inner-rectangle rect-medium">
+                        "Life has many definitions, and mine is that life balances death. Since our time is finite, make sure you pursue happiness every single day."
+                    </div>
 
-            <div class="placeholder">
-                <strong>Creative Skills:</strong> Versatile capabilities in dynamic dancing, vocal performance, and professional music composition.
-            </div>
-        </div>
-    </div>
-
-    <!-- BOX 3 : ECOSYSTEM PROJECTS & INSPIRATION -->
-    <div class="portfolio-box box3">
-        <div class="box-content">
-            <div class="section-title">Projects & Drive</div>
-            <div class="triangle-icon"></div>
-
-            <div class="placeholder">
-                <strong>Technical Frameworks:</strong> Active engineering developments including TrendUs (Personal AI platform), DocSry, Dundu-MST, Webbackend3, and my-ai-chat.
-            </div>
-
-            <div class="placeholder">
-                <strong>African Enterprise:</strong> Innovator behind Dance and Sing Uganda (DnS-Uganda), structuring high-end local platforms to meet global standards.
-            </div>
-
-            <div class="placeholder">
-                <strong>Inspiration (Elon Musk):</strong> "When something is important enough, you do it even if the odds are not in your favor."
-            </div>
-        </div>
-    </div>
-
-    <!-- BOX 4 : CONTACTS & AMBITION -->
-    <div class="portfolio-box box4">
-        <div class="box-content">
-            <div class="contact-icons">
-                <div class="contact-item">
-                    <strong>Email</strong> rocxamkong@gmail.com
-                </div>
-                <div class="contact-item">
-                    <strong>Phone</strong> 0772273270
-                </div>
-                <div class="contact-item">
-                    <strong>GitHub</strong> github.com/rocxam
-                </div>
-                <div class="contact-item">
-                    <strong>Ambition</strong> Technological Growth, Influence & Venture Success
+                    <div class="inner-rectangle rect-small"><strong>Identity:</strong> James Rocxam Kong</div>
+                    <div class="inner-rectangle rect-small"><strong>Philosophy:</strong> Be kind to yourself and others; true energy never dies.</div>
+                    <div class="inner-rectangle rect-small"><strong>Vision:</strong> Driving digital transformation and regional impact.</div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+
+        <!-- SECTION 2: ABOUT -->
+        <section id="about" class="portfolio-section">
+            <div class="portfolio-box box-full">
+                <div class="box-content">
+                    <div class="section-title">About Me</div>
+                    <div class="circle-icon"></div>
+
+                    <div class="placeholder">
+                        Hello! I'm <strong>James Rocxam Kong</strong>, a passionate innovator and technology enthusiast driven by the belief that digital transformation can create meaningful regional impact. With a foundation in Information Technology and a heart for creative expression, I combine technical expertise with artistic vision to build solutions that matter.
+                    </div>
+
+                    <div class="placeholder">
+                        I believe in the power of continuous learning, community-driven development, and leveraging technology to bridge gaps between ideas and reality. My philosophy is simple: <strong>be kind to yourself and others</strong>, because true energy never dies.
+                    </div>
+
+                    <div class="placeholder">
+                        When I'm not coding or designing systems, you'll find me dancing, singing, or composing music—because creativity fuels innovation in every aspect of life.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: BACKGROUND & TALENTS -->
+        <section id="background" class="portfolio-section">
+            <div class="portfolio-box box-full">
+                <div class="box-content">
+                    <div class="section-title">Background & Talents</div>
+                    <div class="circle-icon"></div>
+
+                    <div class="placeholder">
+                        <strong>Education:</strong> Pursuing a Bachelor of Science in Information Technology (BSIT) at Uganda Christian University (UCU). Alumnus of St. Joseph of Nazareth.
+                    </div>
+
+                    <div class="placeholder">
+                        <strong>Leadership:</strong> Serving as the Group 18 Innovation Team Leader, acting as an influential driving force to bridge technical execution with community-driven solutions.
+                    </div>
+
+                    <div class="placeholder">
+                        <strong>Creative Skills:</strong> Versatile capabilities in dynamic dancing, vocal performance, and professional music composition.
+                    </div>
+
+                    <div class="placeholder">
+                        <strong>Technical Expertise:</strong> Full-stack development, AI integration, platform architecture, and innovative problem-solving.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: PROJECTS & DRIVE -->
+        <section id="projects" class="portfolio-section">
+            <div class="portfolio-box box-full">
+                <div class="box-content">
+                    <div class="section-title">Projects & Drive</div>
+                    <div class="triangle-icon"></div>
+
+                    <div class="placeholder">
+                        <strong>Technical Frameworks:</strong> Active engineering developments including TrendUs (Personal AI platform), DocSry, Dundu-MST, Webbackend3, and my-ai-chat.
+                    </div>
+
+                    <div class="placeholder">
+                        <strong>African Enterprise:</strong> Innovator behind Dance and Sing Uganda (DnS-Uganda), structuring high-end local platforms to meet global standards.
+                    </div>
+
+                    <div class="placeholder">
+                        <strong>Inspiration (Elon Musk):</strong> "When something is important enough, you do it even if the odds are not in your favor."
+                    </div>
+
+                    <div class="placeholder">
+                        <strong>Current Focus:</strong> Building scalable solutions that empower communities and driving technological growth with measurable impact.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: CONTACT -->
+        <section id="contact" class="portfolio-section">
+            <div class="portfolio-box box-contact">
+                <div class="box-content">
+                    <div class="section-title">Get In Touch</div>
+                    <div class="triangle-icon"></div>
+
+                    <div class="contact-icons">
+                        <div class="contact-item">
+                            <strong>Email</strong>
+                            <span>rocxamkong@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Phone</strong>
+                            <span>0772273270</span>
+                        </div>
+                        <div class="contact-item">
+                            <strong>GitHub</strong>
+                            <span>github.com/rocxam</span>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Ambition</strong>
+                            <span>Technological Growth, Influence & Venture Success</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>

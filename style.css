@@ -1,6 +1,10 @@
 /* ==========================================
    1. GLOBAL & BASE STYLES
    ========================================== */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #000;
     color: #fff;
@@ -17,7 +21,7 @@ body {
     z-index: 2;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 60px 20px;
     box-sizing: border-box;
 }
 
@@ -40,15 +44,159 @@ body {
 }
 
 /* ==========================================
-   2. BENTO GRID LAYOUT SYSTEM
+   1.5. FLOATING NAVIGATION MENU
    ========================================== */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+.floating-nav {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    pointer-events: none;
 }
 
-/* Glassmorphism Cards */
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    pointer-events: auto;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.nav-item:hover {
+    color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(-5px);
+}
+
+.nav-item.active {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+.nav-dot {
+    width: 8px;
+    height: 8px;
+    background: currentColor;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.nav-item.active .nav-dot {
+    width: 12px;
+    height: 12px;
+    background: #ffd700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+.nav-text {
+    white-space: nowrap;
+    opacity: 0;
+    max-width: 0;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.nav-item:hover .nav-text,
+.nav-item.active .nav-text {
+    opacity: 1;
+    max-width: 150px;
+}
+
+/* ==========================================
+   1.6. PORTFOLIO SECTIONS
+   ========================================== */
+.portfolio-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+    scroll-margin-top: 80px;
+}
+
+.portfolio-section.active {
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section-specific card layouts */
+#home .portfolio-box {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#about .portfolio-box,
+#background .portfolio-box,
+#projects .portfolio-box,
+#contact .portfolio-box {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.box-full {
+    width: 100%;
+    max-width: 800px;
+}
+
+.box-contact {
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Header Text Blocks */
+.portfolio-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.main-title {
+    font-size: 3rem;
+    margin: 0 0 10px 0;
+    letter-spacing: 2px;
+}
+
+.main-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* ==========================================
+   2. CARD STYLING & GLASSMORPHISM
+   ========================================== */
 .portfolio-box {
     background-color: rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(12px);
@@ -56,9 +204,12 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    padding: 25px;
+    padding: 40px;
     box-sizing: border-box;
     transition: transform 0.3s ease, border-color 0.3s ease;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
 }
 
 .portfolio-box:hover {
@@ -66,22 +217,14 @@ body {
     border-color: rgba(255, 255, 255, 0.25);
 }
 
-/* Box Grid Sizing Definitions */
-.box1 {
-    grid-column: 1 / 2;
-    grid-row: span 2;
+/* Home Section Card - Prominent */
+#home .portfolio-box {
+    min-height: 600px;
 }
 
-.box2 {
-    grid-column: 2 / 3;
-}
-
-.box3 {
-    grid-column: 3 / 4;
-}
-
-.box4 {
-    grid-column: 2 / 4;
+/* Contact Card - Wider */
+.box-contact {
+    min-height: 250px;
 }
 
 /* ==========================================
@@ -261,11 +404,142 @@ body {
 /* ==========================================
    5. RESPONSIVE MOBILE VIEWPORT CONTROLS
    ========================================== */
-@media (max-width: 900px) {
-    .portfolio-grid {
-        grid-template-columns: 1fr;
+@media (max-width: 1200px) {
+    .floating-nav {
+        right: 20px;
     }
-    .box1, .box2, .box3, .box4 {
-        grid-column: span 1;
+
+    .nav-item {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .portfolio-box {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile Navigation */
+    .floating-nav {
+        right: 15px;
+        top: auto;
+        bottom: 30px;
+        transform: none;
+    }
+
+    .nav-menu {
+        flex-direction: row;
+        gap: 8px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .nav-item {
+        padding: 6px 10px;
+        font-size: 12px;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-text {
+        display: none;
+    }
+
+    .nav-item:hover .nav-text,
+    .nav-item.active .nav-text {
+        display: none;
+    }
+
+    /* Portfolio Sections */
+    .portfolio-section {
+        min-height: auto;
+        padding: 40px 0;
+    }
+
+    .portfolio-box {
+        padding: 20px;
+        min-height: auto;
+        max-width: 100% !important;
+    }
+
+    #home .portfolio-box {
+        min-height: auto;
+    }
+
+    .box-contact {
+        min-height: auto;
+    }
+
+    /* Container adjustments */
+    .portfolio-container {
+        padding: 40px 15px;
+    }
+
+    /* Contact icons layout */
+    .contact-icons {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contact-item {
+        width: 100%;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-nav {
+        right: 10px;
+        bottom: 20px;
+    }
+
+    .nav-menu {
+        gap: 4px;
+    }
+
+    .nav-item {
+        padding: 5px 8px;
+        font-size: 11px;
+    }
+
+    .portfolio-box {
+        padding: 15px;
+    }
+
+    .section-title {
+        font-size: 1rem;
+    }
+
+    .inner-rectangle {
+        font-size: 13px;
+        margin: 6px 0;
+        padding: 8px;
+    }
+
+    .placeholder {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .contact-icons {
+        gap: 15px;
+    }
+
+    .contact-item {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .triangle-icon {
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 15px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .circle-icon {
+        width: 25px;
+        height: 25px;
     }
 }

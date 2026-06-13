@@ -1,37 +1,145 @@
-console.log("🎯 JavaScript is starting...");
+console.log("🎯 Portfolio Navigation System Initializing...");
 
+// Initialize the single-page portfolio
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("✅ Page is ready!");
-    
-    // TEST 1: Make section titles red (visible test)
-    const titles = document.querySelectorAll('.section-title');
-    console.log("Found " + titles.length + " section titles");
-    
-    if (titles.length > 0) {
-        titles[0].style.color = 'red';
-        titles[0].style.fontWeight = 'bold';
-        console.log("✅ Changed first title to RED");
-    }
-    
-    // TEST 2: Add click to first box
-    const firstBox = document.querySelector('.box1');
-    if (firstBox) {
-        firstBox.style.cursor = 'pointer';
-        firstBox.addEventListener('click', function() {
-            alert('📦 Box 1 clicked!');
-        });
-        console.log("✅ Made Box 1 clickable");
-    }
-    
-    // TEST 3: Simple hover on titles
-    titles.forEach(function(title) {
-        title.addEventListener('mouseover', function() {
-            this.style.backgroundColor = 'rgba(255, 0, 0, 0.1)';
-        });
-        title.addEventListener('mouseout', function() {
-            this.style.backgroundColor = '';
+    console.log("✅ Page loaded! Initializing interactive features...");
+
+    // Get all navigation items and sections
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('.portfolio-section');
+
+    // ========================================
+    // NAVIGATION CLICK HANDLERS
+    // ========================================
+    navItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const sectionId = this.getAttribute('data-section');
+            const targetSection = document.getElementById(sectionId);
+            
+            if (targetSection) {
+                // Update active states
+                navItems.forEach(nav => nav.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Update section visibility
+                sections.forEach(section => section.classList.remove('active'));
+                targetSection.classList.add('active');
+                
+                // Smooth scroll to section
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                console.log(`✅ Navigated to: ${sectionId}`);
+            }
         });
     });
+
+    // ========================================
+    // INTERSECTION OBSERVER FOR ACTIVE STATES
+    // ========================================
+    const observerOptions = {
+        root: null,
+        rootMargin: '-50% 0px -50% 0px',
+        threshold: 0
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const sectionId = entry.target.id;
+                
+                // Update nav items
+                navItems.forEach(nav => {
+                    if (nav.getAttribute('data-section') === sectionId) {
+                        nav.classList.add('active');
+                    } else {
+                        nav.classList.remove('active');
+                    }
+                });
+                
+                // Update sections
+                sections.forEach(section => {
+                    if (section.id === sectionId) {
+                        section.classList.add('active');
+                    } else {
+                        section.classList.remove('active');
+                    }
+                });
+                
+                console.log(`👁️ Viewing section: ${sectionId}`);
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections
+    sections.forEach(section => observer.observe(section));
+
+    // ========================================
+    // INITIALIZE HOME SECTION AS ACTIVE
+    // ========================================
+    const homeSection = document.getElementById('home');
+    if (homeSection) {
+        homeSection.classList.add('active');
+        console.log("✅ Home section set as active on load");
+    }
+
+    // ========================================
+    // SMOOTH SCROLL FOR ANCHOR LINKS
+    // ========================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            if (href !== '#') {
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        });
+    });
+
+    // ========================================
+    // KEYBOARD NAVIGATION (OPTIONAL)
+    // ========================================
+    const sectionIds = ['home', 'about', 'background', 'projects', 'contact'];
     
-    console.log("✅ All JavaScript loaded successfully!");
+    document.addEventListener('keydown', function(e) {
+        // Arrow Down - Next Section
+        if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+            const activeNav = document.querySelector('.nav-item.active');
+            const currentSection = activeNav?.getAttribute('data-section');
+            const currentIndex = sectionIds.indexOf(currentSection);
+            
+            if (currentIndex < sectionIds.length - 1) {
+                const nextNav = document.querySelector(`[data-section="${sectionIds[currentIndex + 1]}"]`);
+                if (nextNav) nextNav.click();
+            }
+        }
+        
+        // Arrow Up - Previous Section
+        if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+            const activeNav = document.querySelector('.nav-item.active');
+            const currentSection = activeNav?.getAttribute('data-section');
+            const currentIndex = sectionIds.indexOf(currentSection);
+            
+            if (currentIndex > 0) {
+                const prevNav = document.querySelector(`[data-section="${sectionIds[currentIndex - 1]}"]`);
+                if (prevNav) prevNav.click();
+            }
+        }
+    });
+
+    console.log("✅ All interactive features initialized successfully!");
 });
+
+// ========================================
+// HANDLE SCROLL ANIMATIONS
+// ========================================
+window.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY;
+    
+    // Optional: Add subtle effects during scroll
+    // You can add parallax or other scroll-triggered animations here
+}, { passive: true });
