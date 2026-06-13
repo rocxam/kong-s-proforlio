@@ -9,7 +9,7 @@ body {
     background-color: #000;
     color: #fff;
     margin: 0;
-    padding: 0 36px;
+    padding: 0 44px;
     font-family: 'Segoe UI', Arial, sans-serif;
     min-height: 100vh;
     overflow-x: hidden;
@@ -21,7 +21,7 @@ body {
     z-index: 2;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 40px 36px;
+    padding: 40px 44px;
     box-sizing: border-box;
 }
 
@@ -92,8 +92,8 @@ body {
 /* General small-card adjustments for split inner cards */
 .diag-card {
     min-height: auto;
-    padding: 20px;
-    width: 340px;
+    padding: 18px;
+    width: 300px;
     box-sizing: border-box;
 }
 
@@ -331,10 +331,10 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.16);
     border-radius: 18px;
     box-shadow: 0 20px 70px rgba(0, 0, 0, 0.22);
-    padding: 40px;
+    padding: 32px;
     box-sizing: border-box;
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-    min-height: 400px;
+    min-height: 320px;
     display: flex;
     flex-direction: column;
 }
@@ -346,9 +346,9 @@ body {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.05));
 }
 
-/* Home Section Card - Prominent */
+/* Home Section Card - More compact */
 #home .portfolio-box {
-    min-height: 600px;
+    min-height: 420px;
 }
 
 /* Contact Card - Wider */
@@ -386,7 +386,7 @@ body {
 }
 
 .rect-large {
-    height: 300px;
+    height: 220px;
     overflow: hidden;
     padding: 0;
 }
