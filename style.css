@@ -5,28 +5,23 @@ html {
     scroll-behavior: smooth;
 }
 
-html,
-body {
-    overflow-x: hidden;
-}
-
 body {
     background-color: #000;
     color: #fff;
     margin: 0;
-    padding: 0;
+    padding: 0 18px;
     font-family: 'Segoe UI', Arial, sans-serif;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* Base Wrapper Setup */
 .portfolio-container {
     position: relative;
     z-index: 2;
-    width: min(1400px, calc(100vw - 96px));
     max-width: 1400px;
     margin: 0 auto;
-    padding: 60px 48px 80px;
+    padding: 40px 18px;
     box-sizing: border-box;
 }
 
@@ -35,31 +30,14 @@ body {
     padding-right: 12px;
 }
 
-@media (max-width: 1200px) {
-    .portfolio-container {
-        width: calc(100vw - 64px);
-        padding: 50px 32px 72px;
-    }
-}
-
 @media (max-width: 900px) {
     .portfolio-container {
-        padding: 50px 24px 60px;
+        padding: 40px 14px;
     }
 
     .portfolio-section {
         padding-left: 10px;
         padding-right: 10px;
-    }
-
-    .diag-card {
-        width: 100%;
-        margin-left: 0 !important;
-        transform: none !important;
-    }
-
-    .diag-card:hover {
-        transform: translateY(-8px) scale(1.01) !important;
     }
 }
 
@@ -68,20 +46,21 @@ body {
 @media (min-width: 900px) {
     .portfolio-container {
         display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(4, 1fr);
         grid-auto-rows: min-content;
         gap: 48px 48px;
         align-items: start;
     }
 
-    /* Place sections on the grid to create a diagonal flow while keeping the canvas inside the viewport */
+    /* Place sections on the grid to create a diagonal flow */
     #home { grid-column: 1 / 2; grid-row: 1; }
     #about { grid-column: 2 / 3; grid-row: 2; }
     #background { grid-column: 3 / 4; grid-row: 3; }
-    #projects { grid-column: 2 / 5; grid-row: 4; }
+    #projects { grid-column: 4 / 5; grid-row: 4; }
     /* Contact spans two columns near the bottom-right */
     #contact { grid-column: 3 / 5; grid-row: 5; }
 
+    /* Reduce card widths to fit grid nicely */
     .portfolio-box { max-width: 100%; }
 }
 
@@ -98,15 +77,15 @@ body {
 
 /* Background section stairs */
 #background .diag-1 { margin-left: 0; }
-#background .diag-2 { margin-left: 80px; transform: translateY(-6px); }
-#background .diag-3 { margin-left: 160px; transform: translateY(-12px); }
-#background .diag-4 { margin-left: 240px; transform: translateY(-18px); }
+#background .diag-2 { margin-left: 120px; transform: translateY(-8px); }
+#background .diag-3 { margin-left: 240px; transform: translateY(-16px); }
+#background .diag-4 { margin-left: 360px; transform: translateY(-24px); }
 
 /* Projects section stairs (shifted more to the right) */
 #projects .proj-1 { margin-left: 20px; }
-#projects .proj-2 { margin-left: 120px; transform: translateY(-8px); }
-#projects .proj-3 { margin-left: 240px; transform: translateY(-16px); }
-#projects .proj-4 { margin-left: 360px; transform: translateY(-24px); }
+#projects .proj-2 { margin-left: 200px; transform: translateY(-8px); }
+#projects .proj-3 { margin-left: 380px; transform: translateY(-16px); }
+#projects .proj-4 { margin-left: 520px; transform: translateY(-24px); }
 
 .diag-card:hover { transform: translateY(-12px) scale(1.02); box-shadow: 0 12px 48px rgba(0,0,0,0.5); }
 
@@ -115,16 +94,16 @@ body {
 
 /* Home section stair offsets */
 #home .home-1 { margin-left: 0; }
-#home .home-2 { margin-left: 60px; transform: translateY(-6px); }
-#home .home-3 { margin-left: 150px; transform: translateY(-12px); }
-#home .home-4 { margin-left: 260px; transform: translateY(-18px); }
-#home .home-5 { margin-left: 380px; transform: translateY(-24px); }
+#home .home-2 { margin-left: 100px; transform: translateY(-8px); }
+#home .home-3 { margin-left: 220px; transform: translateY(-16px); }
+#home .home-4 { margin-left: 360px; transform: translateY(-24px); }
+#home .home-5 { margin-left: 520px; transform: translateY(-32px); }
 
 /* About section stair offsets */
 #about .about-1 { margin-left: 0; }
-#about .about-2 { margin-left: 60px; transform: translateY(-8px); }
-#about .about-3 { margin-left: 160px; transform: translateY(-16px); }
-#about .about-4 { margin-left: 280px; transform: translateY(-24px); }
+#about .about-2 { margin-left: 120px; transform: translateY(-10px); }
+#about .about-3 { margin-left: 260px; transform: translateY(-20px); }
+#about .about-4 { margin-left: 380px; transform: translateY(-28px); }
 
 
 /* Header Text Blocks */
